@@ -1,44 +1,51 @@
 import { useState } from "react"
 
 export default function Personal() {
-    const [newFirstName, setFirstName] = useState('');
-    const [newLastName, setLastName] = useState('');
-    const [newPhoneNumber, setPhoneNumber] = useState('');
-    const [newEmail, setEmail] = useState('');
-    let submitted = false;
+    const [personalDetails, setPersonalDetails] = useState({
+        firstName: "",
+        lastName: "",
+        phone: "",
+        emailAddress: ""
+    })
 
-    function handleEvent(event) {
-        console.log('Does this get hit');
-        alert('hat do oi do');
-        event.preventDefault();
-        setFirstName('');
-        setLastName('');
-        setPhoneNumber('');
-        setEmail('');
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setPersonalDetails((prev) => {
+            return { ...prev, [name]: value }
+        })
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        onSubmit(personalDetails);
     }
 
 
     return <div id="personalForm">
-        <form onSubmit={handleEvent}>
+        <form onSubmit={handleSubmit}>
             <div className="form-row">
                 <label htmlFor="first-name">First Name</label>
-                <input type="text" id="first-name" value={newFirstName}
-                    onChange={(event) => setFirstName(event.target.value)} required />
+                <input type="text" name="firstName"
+                    value={personalDetails.firstName}
+                    onChange={handleChange} required />
             </div>
             <div className="form-row">
                 <label htmlFor="last-name">Last Name</label>
-                <input type="text" id="last-name" value={newLastName}
-                    onChange={(event) => setLastName(event.target.value)} required />
+                <input type="text" name="lastName"
+                    value={personalDetails.lastName}
+                    onChange={handleChange} required />
             </div>
             <div className="form-row">
                 <label htmlFor="email">Email</label>
-                <input type="email" id="email" value={newEmail}
-                    onChange={(event) => setEmail(event.target.value)} required />
+                <input type="email" name='emailAddress'
+                    value={personalDetails.emailAddress}
+                    onChange={handleChange} required />
             </div>
             <div className="form-row">
                 <label htmlFor="email">Phone Number</label>
-                <input type="text" id="phoneNumber" value={newPhoneNumber}
-                    onChange={(event) => setPhoneNumber(event.target.value)} required />
+                <input type="text" name="phone"
+                    value={personalDetails.phone}
+                    onChange={handleChange} required />
             </div>
             <button type="submit">Submit</button>
         </form>
