@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function Personal() {
+export default function Personal({ onSubmit }) {
     const [personalDetails, setPersonalDetails] = useState({
         firstName: "",
         lastName: "",

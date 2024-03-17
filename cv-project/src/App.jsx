@@ -13,19 +13,15 @@ function App() {
   };
 
   return (
-    <>
-
+    <div className="App">
+      <h1>Personal Information Form</h1>
       {submittedData ? (
-        <PersonalInfo formData={submittedData} />
+        <PersonalInfo personalDetails={submittedData} />
       ) : (
         <Personal onSubmit={handleSubmit} />
       )}
-
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
 export default App
