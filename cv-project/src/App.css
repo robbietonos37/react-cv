@@ -44,6 +44,32 @@
   color: #888;
 }
 
-p {
-  color: red;
+.App {
+  display: flex;
+  flex-direction: row;
+  border: solid blue 2px;
+  gap: 300px;
+}
+
+#form-container {
+  display: flex;
+  flex-direction: column;
+  border: solid red 1px;
+  width: 400px;
+}
+
+#education-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  border: solid 2px brown;
+  text-align: left;
 }

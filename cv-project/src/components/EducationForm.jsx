@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function EducationForm({ onSubmit }) {
-    const [educationArray, setEducationArrayElements] = useState([])
+    //const [educationArray, setEducationArrayElements] = useState([])
     const [educationDetails, setEducationDetails] = useState({
         schoolName: "",
         degreeType: "",
@@ -19,7 +19,7 @@ export default function EducationForm({ onSubmit }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setEducationArrayElements([...educationArray, educationDetails]);
+        //setEducationArrayElements([...educationArray, educationDetails]);
         setEducationDetails({
             schoolName: "",
             degreeType: "",
@@ -31,7 +31,7 @@ export default function EducationForm({ onSubmit }) {
 
     return (
         <div id="educationForm">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} id="education-form">
                 <div className="form-row">
                     <label htmlFor="schoolName">School Name</label>
                     <input

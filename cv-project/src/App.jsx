@@ -10,7 +10,7 @@ import EducationInfo from './components/EducationInfo'
 function App() {
   const [submittedData, setSubmittedData] = useState(null);
   const [educationEntries, setEducationEntries] = useState([]);
-
+  { console.log('somehing') }
   const handleSubmit = (data) => {
     setSubmittedData(data);
   };
@@ -19,19 +19,22 @@ function App() {
     setEducationEntries([...educationEntries, data]);
   };
 
-
   return (
     <div className="App">
-      <h1>Personal Information Form</h1>
-      <EducationForm onSubmit={handleEducationSubmit} />
-      {submittedData ? (
-        <PersonalInfo personalDetails={submittedData} />
-      ) : (
-        <Personal onSubmit={handleSubmit} />
-      )}
-      <div>
+      <div id="form-container">
+        <EducationForm onSubmit={handleEducationSubmit} />
+      </div>
+      <div id='resume'>
+        <div >
+          {submittedData ? (
+            <PersonalInfo personalDetails={submittedData} />
+          ) : (
+            <Personal onSubmit={handleSubmit} />
+          )}
+        </div>
+
         {educationEntries.map((entry, index) => (
-          <EducationInfo key={index} educationDetails={entry} />
+          <EducationInfo key={index} educationDetails={entry} index={index} educationEntries={educationEntries} setEducationEntries={setEducationEntries} />
         ))}
       </div>
     </div>
