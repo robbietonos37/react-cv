@@ -73,3 +73,7 @@ label {
   border: solid 2px brown;
   text-align: left;
 }
+
+.workInfo {
+  color: red;
+}

@@ -6,11 +6,13 @@ import Personal from './components/personal.jsx'
 import PersonalInfo from './components/personalInfo'
 import EducationForm from './components/EducationForm'
 import EducationInfo from './components/EducationInfo'
+import WorkForm from './components/WorkForm'
+import WorkInfo from './components/WorkInfo'
 
 function App() {
   const [submittedData, setSubmittedData] = useState(null);
   const [educationEntries, setEducationEntries] = useState([]);
-  { console.log('somehing') }
+  const [workEntries, setWorkEntries] = useState([]);
   const handleSubmit = (data) => {
     setSubmittedData(data);
   };
@@ -19,10 +21,15 @@ function App() {
     setEducationEntries([...educationEntries, data]);
   };
 
+  const handleWorkSubmit = (data) => {
+    setWorkEntries([...workEntries, data]);
+  }
+
   return (
     <div className="App">
       <div id="form-container">
         <EducationForm onSubmit={handleEducationSubmit} />
+        <WorkForm onSubmit={handleWorkSubmit} />
       </div>
       <div id='resume'>
         <div >
@@ -36,6 +43,10 @@ function App() {
         {educationEntries.map((entry, index) => (
           <EducationInfo key={index} educationDetails={entry} index={index} educationEntries={educationEntries} setEducationEntries={setEducationEntries} />
         ))}
+        {workEntries.map((entry, index) => {
+          console.log(workEntries);
+          <WorkInfo key={index} workDetails={entry} index={index} workEntries={workEntries} setWorkEntries={setWorkEntries} />
+        })}
       </div>
     </div>
   );
