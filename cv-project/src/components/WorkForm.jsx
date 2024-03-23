@@ -44,13 +44,13 @@ export default function WorkForm({ onSubmit }) {
             </div>
             <div className="form-row">
                 <label htmlFor="startDate">Start Date</label>
-                <input type="text" name='startDate'
+                <input type="date" name='startDate'
                     value={workDetails.startDate}
                     onChange={handleChange} required />
             </div>
             <div className="form-row">
                 <label htmlFor="endDate">End Date</label>
-                <input type="text" name="endDate"
+                <input type="date" name="endDate"
                     value={workDetails.endDate}
                     onChange={handleChange} required />
             </div>

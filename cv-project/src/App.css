@@ -77,3 +77,8 @@ label {
 .workInfo {
   color: red;
 }
+
+#resume {
+  display: flex;
+  flex-direction: column;
+}

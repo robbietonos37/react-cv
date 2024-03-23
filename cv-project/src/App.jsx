@@ -43,10 +43,10 @@ function App() {
         {educationEntries.map((entry, index) => (
           <EducationInfo key={index} educationDetails={entry} index={index} educationEntries={educationEntries} setEducationEntries={setEducationEntries} />
         ))}
-        {workEntries.map((entry, index) => {
-          console.log(workEntries);
+        {workEntries.map((entry, index) =>
           <WorkInfo key={index} workDetails={entry} index={index} workEntries={workEntries} setWorkEntries={setWorkEntries} />
-        })}
+        )}
+
       </div>
     </div>
   );

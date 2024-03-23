@@ -54,7 +54,7 @@ export default function WorkInfo({ workDetails, index, workEntries, setWorkEntri
                     <div className="form-row">
                         <label htmlFor="startDate">Start Date</label>
                         <input
-                            type="text"
+                            type="date"
                             name="startDate"
                             value={editedWorkDetails.startDate}
                             onChange={handleInputChange}
@@ -64,7 +64,7 @@ export default function WorkInfo({ workDetails, index, workEntries, setWorkEntri
                     <div className="form-row">
                         <label htmlFor="endDate">End Date</label>
                         <input
-                            type="text"
+                            type="date"
                             name="endDate"
                             value={editedWorkDetails.endDate}
                             onChange={handleInputChange}
